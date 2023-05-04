@@ -16,10 +16,11 @@ import {
 import NextLink from "next/link";
 
 import "@fontsource/space-grotesk";
+import Water_Lilies from "public/static/images/Water_Lilies.jpg"
 import Image from "next/image";
 import { useSpring } from "framer-motion";
 import { useLayoutEffect, useRef } from "react";
-
+// const Water_Lilies = require("public/static/images/Water_Lilies.jpg");
 export default function CallToActionWithIllustration() {
   const spring = useSpring(0, { stiffness: 700, damping: 100 });
 
@@ -112,7 +113,7 @@ const MonetImg = (props: AspectRatioProps) => (
       <AspectRatio ratio={1 / 1} position={"relative"} {...props}>
         <Box rounded="md">
           <Image
-            src={"/static/images/Water_Lilies.jpg"}
+            src={Water_Lilies}
             alt=""
             style={{ objectFit: "cover", width: "100%", height: "100%" }}
             sizes="100%"
