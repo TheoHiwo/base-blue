@@ -112,7 +112,7 @@ const MonetImg = (props: AspectRatioProps) => (
       <AspectRatio ratio={1 / 1} position={"relative"} {...props}>
         <Box rounded="md">
           <Image
-            src={"/../public/images/Water_Lilies.jpg"}
+            src={"/static/images/Water_Lilies.jpg"}
             alt=""
             style={{ objectFit: "cover", width: "100%", height: "100%" }}
             sizes="100%"
