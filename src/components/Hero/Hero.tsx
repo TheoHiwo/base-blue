@@ -84,9 +84,9 @@ export default function CallToActionWithIllustration() {
             </Button>
           </Link>
         </Stack>
-        <Flex w={"full"} justifyContent="center">
+        {/* <Flex w={"full"} justifyContent="center"> */}
           <HokusaiImg width={{ sm: "24rem", lg: "28rem" }} mt={{ base: 12, sm: 16 }} />
-        </Flex>
+        {/* </Flex> */}
       </Stack>
     </Container>
   );
