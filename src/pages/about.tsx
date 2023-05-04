@@ -12,29 +12,36 @@ import {
   Link,
   SlideFade,
 } from "@chakra-ui/react";
-
+import Monet from "public/images/Water_Lilies.jpg"
 import Image from "next/image";
 import { motion, useScroll } from "framer-motion";
+
+const MonetImg = () => (
+  <>
+  <Stack w="100%" >
+    <AspectRatio ratio={1071 / 720} position={"relative"}>
+      <Box rounded="md">
+        <Image
+          src={Monet}
+          alt="Water Lilies, Claude Monet, 1906"
+          style={{ objectFit: "cover", width: "100%", height: "100%" }}
+          sizes="100%"
+          fill
+        />
+      </Box>
+    </AspectRatio>
+    <Text opacity="0.5" fontSize="1.2rem" alignSelf={'center'}>
+        Water Lilies, Claude Monet, 1906
+    </Text> 
+    </Stack>
+  </>
+);
+
 
 export default function About() {
   const { scrollYProgress } = useScroll();
   const apiArtLink = "https://api.artic.edu/docs/#introduction";
-  const HokusaiImg = () => (
-    <>
-      <AspectRatio w="100%" ratio={1071 / 720} position={"relative"}>
-        <Box rounded="md">
-          <Image
-            src={"/../public/images/Water_Lilies.jpg"}
-            alt=""
-            style={{ objectFit: "cover", width: "100%", height: "100%" }}
-            sizes="100%"
-            fill
-          />
-        </Box>
-      </AspectRatio>
-    </>
-  );
-
+  
   return (
     <>
       <Container maxWidth={["95%", "95%", "70%", "60%", "50%"]}>
@@ -45,7 +52,7 @@ export default function About() {
               <Link href="/">blue Art</Link>
             </Box>
           </Heading>
-          <HokusaiImg />
+          <MonetImg />
 
           <Text>
             Passionate about art, I have come to create a platform that celebrates the

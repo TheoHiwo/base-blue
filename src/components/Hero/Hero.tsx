@@ -14,13 +14,11 @@ import {
   useColorModeValue,
 } from "@chakra-ui/react";
 import NextLink from "next/link";
-
 import "@fontsource/space-grotesk";
-import Water_Lilies from "public/static/images/Water_Lilies.jpg"
+import Hokusai from "public/images/Tsunami_by_hokusai.jpg"
 import Image from "next/image";
 import { useSpring } from "framer-motion";
 import { useLayoutEffect, useRef } from "react";
-// const Water_Lilies = require("public/static/images/Water_Lilies.jpg");
 export default function CallToActionWithIllustration() {
   const spring = useSpring(0, { stiffness: 700, damping: 100 });
 
@@ -87,7 +85,7 @@ export default function CallToActionWithIllustration() {
           </Link>
         </Stack>
         <Flex w={"full"} justifyContent="center">
-          <MonetImg width={{ sm: "24rem", lg: "28rem" }} mt={{ base: 12, sm: 16 }} />
+          <HokusaiImg width={{ sm: "24rem", lg: "28rem" }} mt={{ base: 12, sm: 16 }} />
         </Flex>
       </Stack>
     </Container>
@@ -107,14 +105,14 @@ export const Illustration = (props: IconProps) => {
   );
 };
 
-const MonetImg = (props: AspectRatioProps) => (
+const HokusaiImg = (props: AspectRatioProps) => (
   <>
-    <Stack>
-      <AspectRatio ratio={1 / 1} position={"relative"} {...props}>
+    <Stack >
+      <AspectRatio ratio={1071 / 720} position={"relative"} {...props}>
         <Box rounded="md">
           <Image
-            src={Water_Lilies}
-            alt=""
+            src={Hokusai}
+            alt="The Great Wave off Kanagawa, Katsushika Hokusai, 1831"
             style={{ objectFit: "cover", width: "100%", height: "100%" }}
             sizes="100%"
             fill
@@ -122,25 +120,9 @@ const MonetImg = (props: AspectRatioProps) => (
         </Box>
       </AspectRatio>
       <Text opacity="0.5" fontSize="1.2rem">
-        Water Lilies, Claude Monet, 1906
+      The Great Wave off Kanagawa, Katsushika Hokusai, 1831
       </Text>
     </Stack>
   </>
 );
 
-const Title = () => {
-  return (
-    <Flex
-      //   direction="column"
-      //   justifyContent="start"
-      //   alignItems="start"
-      fontFamily={"Space Grotesk, sans-serif"}
-      fontSize="3rem"
-      fontWeight="bold"
-      letterSpacing={".1rem"}
-      color={useColorModeValue("brand.950", "brand.50")}
-    >
-      <Text>Explore a Stunning Gallery of Artworks in</Text>
-    </Flex>
-  );
-};
