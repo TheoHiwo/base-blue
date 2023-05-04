@@ -1,0 +1,151 @@
+.tag {
+  display: none;
+}
+
+.pronunciation-group-list {
+  display: none;
+}
+
+.inflection-list {
+  display: none;
+}
+
+.kanji-glyph-data > Statistics* {
+  display: none;
+}
+.kanji-statistics {
+  display: none;
+}
+
+.headword-term {
+  font-size: 1.7em;
+}
+
+ruby > rt {
+  display: block;
+  font-size: 80%;
+  text-align: start;
+}
+
+.icon.color-icon {
+  filter: grayscale(90%);
+}
+
+.headword-term-outer {
+  display: inline-block;
+  margin-left: var(--headword-reading-space);
+  margin: 0.5em 0 0em 1.4em;
+  font-size: 1.2rem;
+}
+
+.pronunciation-group-list {
+  margin: 0;
+  padding: 0 0 0 var(--list-padding1);
+  list-style-type: decimal;
+}
+
+entry.header {
+  margin-bottom: 2em;
+}
+
+ol > li:first-of-type {
+  padding-top: 0.9em;
+  margin-top: 0.2em;
+  margin-bottom: 1.1em;
+  border-top: 1px solid black;
+  font-size: 1.5em;
+  list-style: none;
+  font-family: Roboto;
+  line-height: 0.8em;
+}
+
+.inflection-list {
+  display: inline-block;
+  color: var(--reason-text-color);
+}
+
+.term-expression-text {
+  display: inline-block;
+  font-size: 1em;
+  color: #000000;
+  margin: 0px 15px;
+}
+.term-glossary {
+  font-size: 0.5em;
+}
+
+.kanji-glyph {
+  font-family: "Segoe UI", Tahoma, sans-serif;
+  font-size: 1.5em;
+  line-height: 0.7;
+  padding: 0em;
+  vertical-align: left;
+  margin: 0px 15px;
+}
+.kanji-info-table {
+  width: 100%;
+}
+
+.navigation-header {
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 01.5em;
+  box-sizing: border-box;
+  padding: 0em 1em;
+  border-bottom: 0.07142857em solid var(--light-border-color);
+  background-color: var(--background-color);
+  z-index: 10;
+}
+:root[data-yomichan-page="float"] .navigation-header {
+  position: fixed;
+}
+
+.kanji-glyph-data > tbody > tr > * {
+  border-top: 0.07142857em solid var(--medium-border-color);
+  text-align: left;
+  vertical-align: top;
+  padding: 0em;
+  margin: 0;
+  font-size: 90%;
+}
+
+@media (max-width: 768px) {
+  tr th:nth-child(3),
+  tr td:nth-child(3) {
+    display: none;
+  }
+  :root {
+    --progress-bar-indicator-color: none;
+    --entry-current-indicator-color: none;
+    --progress-bar-track-color: none;
+
+    --entry-horizontal-padding: 0.72em;
+    --entry-vertical-padding: 0.72em;
+
+    --main-content-vertical-padding: 0.5em;
+    --main-content-horizontal-padding: 0.5em;
+
+    --action-button-padding: 0em;
+    --list-margin: 2em;
+    --content-width: 90%;
+
+    --font-size-no-units: 12;
+  }
+
+  .icon[data-icon="cross"] {
+    --icon-image: url(/images/cross.svg);
+  }
+
+  .content-sidebar-top-pre {
+    flex: 0 1 auto;
+    bottom: 0;
+    position: sticky;
+  }
+
+  .content-sidebar-bottom {
+    flex: 0 0 auto;
+    bottom: auto;
+    position: static;
+  }
+}
