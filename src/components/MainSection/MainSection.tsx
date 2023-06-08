@@ -21,12 +21,12 @@ export default function MainSection({ data }) {
   const [errorM, setErrorM] = useState("");
 
   useEffect(() => {
-    const regex = /^[a-zA-ZÀ-ÿ\u00f1\u00d1\u00E0-\u00FC ]*$/;
-    // const regex = /^[a-zA-Z0-9 ]*$/  // only english letters
+    // const regex = /^[a-zA-ZÀ-ÿ\u00f1\u00d1\u00E0-\u00FC ]*$/;
+    const regex = /^[a-zA-ZÀ-ÿ\u00f1\u00d1\u00E0-\u00FC ,+*?^$()[\]{}|\\.-]*$/
      if (query.match(regex)) {
       setErrorM("");
     } else {
-      setErrorM("Only Roman letters are allowed");
+      setErrorM("Contains invalid characters");
     }
   }, [query]);
 

@@ -38,7 +38,14 @@ export default function CallToActionWithIllustration() {
   }
 
   return (
-    <Container maxW={"5xl"}>
+    <Container maxWidth={[
+      "95%",
+      "95%",
+      "70%",
+      "60%",
+      "50%",
+    ]}
+    pb='2rem'>
       <Stack
         textAlign={"center"}
         align={"center"}
@@ -84,9 +91,7 @@ export default function CallToActionWithIllustration() {
             </Button>
           </Link>
         </Stack>
-        {/* <Flex w={"full"} justifyContent="center"> */}
-          <HokusaiImg width={{ sm: "24rem", lg: "28rem" }} mt={{ base: 12, sm: 16 }} />
-        {/* </Flex> */}
+          <HokusaiImg />
       </Stack>
     </Container>
   );
@@ -107,7 +112,7 @@ export const Illustration = (props: IconProps) => {
 
 const HokusaiImg = (props: AspectRatioProps) => (
   <>
-    <Stack >
+    <Stack w={'100%'}>
       <AspectRatio ratio={1071 / 720} position={"relative"} {...props}>
         <Box rounded="md">
           <Image
@@ -116,10 +121,11 @@ const HokusaiImg = (props: AspectRatioProps) => (
             style={{ objectFit: "cover", width: "100%", height: "100%" }}
             sizes="100%"
             fill
+            priority
           />
         </Box>
       </AspectRatio>
-      <Text opacity="0.5" fontSize="1.2rem">
+      <Text opacity="0.5" fontSize="1.2rem" alignSelf='center'>
       The Great Wave off Kanagawa, Katsushika Hokusai, 1831
       </Text>
     </Stack>
