@@ -11,6 +11,12 @@ export const SIZE = 5;
 export default function HomePage({ data }) {
   return (
     <>
+      <Head>
+        <title>BaseBlue</title>
+        {/* <meta name="description" content="Gallery of blue Art" /> */}
+        {/* <meta name="viewport" content="width=device-width, initial-scale=1" /> */}
+        <link rel="icon" href="/favicon.ico" />
+      </Head>
       <Hero />
       <MainSection data={data} />
     </>
