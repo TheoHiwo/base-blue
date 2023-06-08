@@ -1,5 +1,5 @@
 import Hero from "@/components/Hero/Hero";
-import Head from 'next/head'
+import Head from "next/head";
 import MainSection from "@/components/MainSection/MainSection";
 import getSeed from "@/data/getSeed";
 import { getJson } from "@/data/query";
@@ -11,10 +11,11 @@ export const SIZE = 5;
 export default function HomePage({ data }) {
   return (
     <>
-    <Head>
+      <Head>
         <title>BaseBlue</title>
-        {/* <link rel="icon" href="/favicon_io/favicon.ico" /> */}
-        
+        {/* <meta name="description" content="Gallery of blue Art" /> */}
+        {/* <meta name="viewport" content="width=device-width, initial-scale=1" /> */}
+        <link rel="icon" href="/favicon.ico" />
       </Head>
       <Hero />
       <MainSection data={data} />
