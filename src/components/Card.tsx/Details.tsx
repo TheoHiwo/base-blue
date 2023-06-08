@@ -81,7 +81,7 @@ export default function Details({ data }) {
             _active={hoverColorProps}
             _hover={hoverColorProps}
           >
-            <Box as="span" flex="1" textAlign="left" pl='2rem' fontSize={14} fontWeight='bold'>
+            <Box as="span" flex="1" textAlign="left" pl='2rem' fontSize={22} fontWeight='bold'>
               Details
             </Box>
             <AccordionIcon />

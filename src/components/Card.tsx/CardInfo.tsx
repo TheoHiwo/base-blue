@@ -38,8 +38,8 @@ export default function CardInfo({
       {(title ||
         thumbnail.alt_text) && (
         <Text
-          fontSize={18}
-          fontWeight="bold"
+          fontSize={22}
+          fontWeight="extrabold"
           lineHeight={7}
           letterSpacing={1.25}
           py={{
