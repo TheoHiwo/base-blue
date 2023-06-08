@@ -121,6 +121,7 @@ const HokusaiImg = (props: AspectRatioProps) => (
             style={{ objectFit: "cover", width: "100%", height: "100%" }}
             sizes="100%"
             fill
+            priority
           />
         </Box>
       </AspectRatio>
