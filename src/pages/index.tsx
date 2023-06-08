@@ -13,7 +13,7 @@ export default function HomePage({ data }) {
     <>
     <Head>
         <title>BaseBlue</title>
-        <link rel="icon" href="/favicon_io/favicon.ico" />
+        {/* <link rel="icon" href="/favicon_io/favicon.ico" /> */}
         
       </Head>
       <Hero />
