@@ -13,7 +13,6 @@ export default function HomePage({ data }) {
     <>
     <Head>
         <title>BaseBlue</title>
-        <meta name="description" content="Gallery of blue Art" />
         <link rel="icon" href="/favicon.ico" />
         
       </Head>
