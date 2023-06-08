@@ -37,7 +37,7 @@ export default function SearchInput({ query, handleChange }) {
         bg={bgInput}
         color="brand.action"
         fontFamily={"Space Grotesk, sans-serif"}
-        fontSize="2rem"
+        fontSize={{ base: "1.5rem", md: "2rem", lg: "2.5rem" }}
         fontWeight="bold"
         letterSpacing={".1rem"}
         _placeholder={{ color: "brand.action", opacity: 1 }}

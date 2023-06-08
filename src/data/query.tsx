@@ -21,6 +21,8 @@ export const fieldsArray: string[] = [
   "_score",
 ];
 
+const excludeIds = ["21232", "23913"];
+
 export async function getJson(
   size: number,
   from,
@@ -29,19 +31,29 @@ export async function getJson(
   posts,
   accuracy: number = 0.0003
 ) {
-  const dataJson = await fetch("https://api.artic.edu/api/v1/search", {
-    method: "POST",
-    headers: {
-      Accept: "application/json",
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify(getQuery()),
-  }).then((response) => response.json());
+  const dataJson = await fetch(
+    "https://api.artic.edu/api/v1/search",
+    {
+      method: "POST",
+      headers: {
+        Accept: "application/json",
+        "Content-Type":
+          "application/json",
+      },
+      body: JSON.stringify(getQuery()),
+    }
+  ).then((response) => response.json());
 
   return dataJson;
 
   function getQuery() {
-    const sort = !searchQuery?{ "color.population": "desc" } : { _score: "desc" };
+    const sortMethod = [
+      { _score: "desc" },
+      { "color.population": "desc" },
+    ];
+    const sort = !searchQuery
+      ? sortMethod[Math.floor(Math.random() * sortMethod.length-1)]
+      : { _score: "desc" };
     return {
       resources: "artworks",
       // prettier-ignore
@@ -57,7 +69,8 @@ export async function getJson(
               must: [
                 {
                   term: {
-                    is_public_domain: true,
+                    is_public_domain:
+                      true,
                   },
                 },
                 {
@@ -78,18 +91,20 @@ export async function getJson(
                 },
                 {
                   range: {
-                    "color.percentage": {
-                      gte: accuracy,
-                      lte: 100,
-                    },
+                    "color.percentage":
+                      {
+                        gte: accuracy,
+                        lte: 100,
+                      },
                   },
                 },
                 {
                   range: {
-                    "color.population": {
-                      gte: 1,
-                      lte: 10000,
-                    },
+                    "color.population":
+                      {
+                        gte: 1,
+                        lte: 10000,
+                      },
                   },
                 },
                 {
@@ -97,16 +112,18 @@ export async function getJson(
                     should: [
                       {
                         range: {
-                          "color.population": {
-                            gt: 0,
-                          },
+                          "color.population":
+                            {
+                              gt: 0,
+                            },
                         },
                       },
                       {
                         range: {
-                          colorfulness: {
-                            gt: 0,
-                          },
+                          colorfulness:
+                            {
+                              gt: 0,
+                            },
                         },
                       },
                     ],
@@ -115,22 +132,50 @@ export async function getJson(
                 {
                   bool: {
                     should: [
-                      { term: { artwork_type_id: 1 } },
-                      { term: { artwork_type_id: 14 } },
+                      {
+                        term: {
+                          artwork_type_id: 1,
+                        },
+                      },
+                      {
+                        term: {
+                          artwork_type_id: 14,
+                        },
+                      },
                       {
                         bool: {
                           must: [
-                            { term: { artwork_type_id: 18 } },
-                            { match: { place_of_origin: { "query": "Japan", "boost": 1 } } }
-                          ]
-                        }
-                      }
-                    ]
-                  }
+                            {
+                              term: {
+                                artwork_type_id: 18,
+                              },
+                            },
+                            {
+                              match: {
+                                place_of_origin:
+                                  {
+                                    query:
+                                      "Japan",
+                                    boost: 1,
+                                  },
+                              },
+                            },
+                          ],
+                        },
+                      },
+                    ],
+                  },
                 },
                 {
                   exists: {
                     field: "image_id",
+                  },
+                },
+              ],
+              must_not: [
+                {
+                  ids: {
+                    values: excludeIds,
                   },
                 },
               ],

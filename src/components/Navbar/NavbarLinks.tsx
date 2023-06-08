@@ -1,4 +1,7 @@
-import { MoonIcon, SunIcon } from "@chakra-ui/icons";
+import {
+  MoonIcon,
+  SunIcon,
+} from "@chakra-ui/icons";
 import {
   Flex,
   IconButton,
@@ -14,9 +17,11 @@ import { BsHeartFill } from "react-icons/bs";
 export default function NavbarLinks() {
   const Links = ["Home", "About"];
   // const Links = ["Home", "About", "Contact"];
-  const { colorMode, toggleColorMode } = useColorMode();
+  const { colorMode, toggleColorMode } =
+    useColorMode();
 
-  const labelDonate = "Donate to the Art Institute of Chicago";
+  const labelDonate =
+    "Donate to the Art Institute of Chicago";
   return (
     <>
       {Links.map((link) => (
@@ -30,18 +35,30 @@ export default function NavbarLinks() {
         // bg={useColorModeValue("brand.100", "brand.900")}
         // color={useColorModeValue("brand.600", "brand.300")}
         _hover={{
-          bg:"brand.500",
+          bg: "brand.500",
         }}
-        icon={colorMode === "dark" ? <SunIcon /> : <MoonIcon />}
-        variant='ghost'
+        icon={
+          colorMode === "dark" ? (
+            <SunIcon />
+          ) : (
+            <MoonIcon />
+          )
+        }
+        variant="ghost"
       />
-      <Tooltip label={labelDonate} colorScheme="brand">
-        <Link href="https://sales.artic.edu/donate" target={"_blank"}>
+      <Tooltip
+        label={labelDonate}
+        colorScheme="brand"
+      >
+        <Link
+          href="https://sales.artic.edu/donate"
+          target={"_blank"}
+        >
           <IconButton
             aria-label={labelDonate}
             colorScheme={"pink"}
             icon={<BsHeartFill />}
-            variant='ghost'
+            variant="ghost"
           />
         </Link>
       </Tooltip>

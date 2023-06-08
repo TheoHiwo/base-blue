@@ -1,20 +1,12 @@
-import MotionBox, { MotionBoxProps } from "@/components/Motion/MotionBox";
+import MotionBox from "@/components/Motion/MotionBox";
 import {
-  Text,
-  Box,
+  AspectRatio, Box,
   Container,
-  Heading,
-  Flex,
-  VStack,
-  AspectRatio,
-  Show,
-  Stack,
-  Link,
-  SlideFade,
+  Heading, Link, Stack, Text, VStack
 } from "@chakra-ui/react";
-import Monet from "public/images/Water_Lilies.jpg"
-import Image from "next/image";
 import { motion, useScroll } from "framer-motion";
+import Image from "next/image";
+import Monet from "public/images/Water_Lilies.jpg";
 
 const MonetImg = () => (
   <>
@@ -55,9 +47,7 @@ export default function About() {
           <MonetImg />
 
           <Text>
-            Passionate about art, I have come to create a platform that celebrates the
-            beauty and versatility of the color blue. My goal is to showcase a diverse
-            range of artworks that explore this beautiful color's many shades and moods.
+          Passionate about art, I have come to create a platform that celebrates the beauty and versatility of the color blue. I aim to showcase a diverse range of artworks exploring this beautiful color's many shades and moods.
           </Text>
 
           <Text>
@@ -68,12 +58,13 @@ export default function About() {
             </Link>
             , united by their use of blue as a dominant or prominent color. In addition,
             this collection features artworks by established artists whose contributions
-            to the art world have stood the test of time, each with their unique style and
+            to the art world have stood the test of time, each with its unique style and
             interpretation of the color blue. These artists have created timeless
             masterpieces that continue to inspire and captivate audiences today. In
             addition to their works, these artists have also profoundly influenced other
             artists, shaping the course of art history and impacting future generations of
             creatives.
+
           </Text>
 
           <Text>
@@ -88,41 +79,11 @@ export default function About() {
             background or experience. I hope this collection inspires you to appreciate
             the world's rich cultural heritage.
           </Text>
-
-          <motion.div
-            whileHover={{ x: [null, 100] }}
-            transition={{ ease: "easeOut", duration: 1 }}
-            // initial={{ opacity: 0}}
-          >
-            Sample motion.div...!!
-          </motion.div>
-
-          <MotionBox
-            whileTap={"hidden"}
-            transition={{ ease: "easeOut", duration: 1 }}
-            initial={"hidden"}
-            variants={{
-              hidden: {
-                opacity: 0,
-                transition: { when: "afterChildren", staggerChildren: 0 },
-              },
-              visible: { opacity: 1, transition: { when: "beforeChildren" } },
-            }}
-            animate={"visible"}
-          >
-            Sample MotionBox...??
-            <MotionBox
-              variants={{ hidden: { opacity: 0, x: 100 }, visible: { opacity: 1, x: 0 } }}
-            >
-              Child
-            </MotionBox>
-          </MotionBox>
-
           <Text>
             Thank you for visiting this gallery. I hope you enjoy your experience and
             discover something new and inspiring. If you have any questions or comments,
             please do not hesitate to{" "}
-            <Link color="brand.action" href={"/contact"}>
+            <Link color="brand.action" href={"https://twitter.com/HiwoTheo"} target={'_blank'}>
               contact me
             </Link>
             . <br /> <br /> I look forward to hearing from you!
