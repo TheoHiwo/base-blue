@@ -60,7 +60,7 @@ export default function HomePage({ data }) {
         <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1.0" />
         <meta name="theme-color" content="#000" />
         <link rel="shortcut icon" href="/favicon.ico" />
-        <link rel="icon" href="/icons/favicon.ico?v=2" />
+        <link rel="icon" href="/icons/favicon.ico" />
 
         {/* 
       Twitter Summary card
