@@ -7,10 +7,10 @@ export default function Document() {
     <Html lang="en">
       {/* <Head /> */}
       <Head>
-        <title>BaseBlue</title>
+        {/* <title>BaseBlue</title> */}
         {/* <meta name="description" content="Gallery of blue Art" /> */}
         {/* <meta name="viewport" content="width=device-width, initial-scale=1" /> */}
-        <link rel="icon" href="/favicon.ico" />
+        {/* <link rel="icon" href="/favicon-32x32.png" /> */}
       </Head>
       <body id="scrollableDiv">
         <ColorModeScript initialColorMode={theme.config.initialColorMode} />

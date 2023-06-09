@@ -31,6 +31,8 @@ export async function getJson(
   posts,
   accuracy: number = 0.0003
 ) {
+
+  try {
   const dataJson = await fetch(
     "https://api.artic.edu/api/v1/search",
     {
@@ -45,15 +47,20 @@ export async function getJson(
   ).then((response) => response.json());
 
   return dataJson;
+} catch (error) {
+  console.log(error);
+  return []
+}
+
 
   function getQuery() {
-    const sortMethod = [
-      { _score: "desc" },
-      { "color.population": "desc" },
-    ];
-    const sort = !searchQuery
-      ? sortMethod[Math.floor(Math.random() * sortMethod.length-1)]
-      : { _score: "desc" };
+    // const sortMethod = [
+    //   { _score: "desc" },
+    //   { "color.population": "desc" },
+    // ];
+    // const sort = !searchQuery
+    //   ? sortMethod[Math.floor(Math.random() * sortMethod.length-1)]
+    //   : { _score: "desc" };
     return {
       resources: "artworks",
       // prettier-ignore
@@ -193,7 +200,7 @@ export async function getJson(
 
       // sort: [ { "color.population": "asc/desc" } ],
       // filter only if to query = false
-      sort: [sort],
+      // sort: [sort],
     };
   }
 }

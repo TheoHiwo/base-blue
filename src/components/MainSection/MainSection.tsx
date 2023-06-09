@@ -8,6 +8,7 @@ import { getJson } from "@/data/query";
 import { seedInit, SIZE, SIZE_INIT } from "@/pages";
 
 export default function MainSection({ data }) {
+  
   const [seedCards, setSeedCards] = useState<number>(seedInit);
   const [isFetching, setIsFetching] = useState(false);
   const [size, setSize] = useState(SIZE);

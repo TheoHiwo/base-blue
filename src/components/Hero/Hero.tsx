@@ -96,7 +96,6 @@ export default function CallToActionWithIllustration() {
     </Container>
   );
 }
-console.log("🔳 , file: Hero.tsx:78 , scrollToElement , Stack:", Stack);
 
 export const Illustration = (props: IconProps) => {
   return (
